@@ -11,7 +11,5 @@
   ],
   "preloadedJs": [
     { "path": "h5p.js" }
-  ],
-  "preloadedCss": [
   ]
 }

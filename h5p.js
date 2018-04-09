@@ -12,21 +12,16 @@ H5PEditor.widgets.math_eval_editor = H5PEditor.MathEvalEditor = (function ($) {
    
   C.prototype.appendTo = function ($container) {
     
-    this.applet = new math_eval_wrapper("viewer");
+    this.applet = new math_eval_wrapper("editor");
     $container.append(this.applet.el);
-    try {
-      this.applet.data = this.data.data;
-    } catch(ex) {}
+    this.applet.data = this.data.data;
 
   };
 
 
   C.prototype.save = function() {
     var data = {"data" : undefined};
-    
-    try { 
-      data.data = this.applet.data;
-    } catch(ex) {}
+    data.data = this.applet.data;
 
     this.params = h5p_get_data_str(data);
     this.setValue(this.field, this.params);
